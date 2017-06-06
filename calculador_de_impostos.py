@@ -1,5 +1,6 @@
 from orcamento import Orcamento
 from impostos import calcula_ISS, calcula_ICMS
+""" Aplicação do Padrão Strategy """
 
 
 class Calculador_de_impostos(object):
