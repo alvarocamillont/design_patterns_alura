@@ -20,7 +20,7 @@ class CalculadorDeImpostosTestCase(unittest.TestCase):
 
     def test_realiza_calculo_ISS(self):
         valor = self.calculador_de_impostos.realiza_calculo(self.orcamento, ISS())
-        self.assertEqual(valor, 55.0)
+        self.assertEqual(valor, 105.0)
 
     def test_realiza_calculo_ICPP(self):
         valor = self.calculador_de_impostos.realiza_calculo(self.orcamento, ICPP())

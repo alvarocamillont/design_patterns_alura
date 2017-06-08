@@ -1,6 +1,13 @@
 from abc import ABCMeta, abstractclassmethod
 
 
+def IPVX(metodo_funcao):
+    """Exemplo de implementação de decorator"""
+    def decorador(self, orcamento):
+        return metodo_funcao(self, orcamento) + 50
+    return decorador
+
+
 class Imposto(metaclass=ABCMeta):
     def __init__(self, outro_imposto=None):
         self.__outro_imposto = outro_imposto
@@ -38,6 +45,7 @@ class Template_de_imposto_condicional(Imposto, metaclass=ABCMeta):
 
 
 class ISS(Imposto):
+    @IPVX
     def calcula(self, orcamento):
         return orcamento.valor * 0.1 + self.calculo_do_outro_imposto(orcamento)
 
@@ -75,5 +83,6 @@ class IKCV(Template_de_imposto_condicional):
             if item.valor > 100:
                 return True
         return False
+
 
 
