@@ -30,6 +30,10 @@ class CalculadorDeImpostosTestCase(unittest.TestCase):
         valor = self.calculador_de_impostos.realiza_calculo(self.orcamento, IKCV())
         self.assertEqual(valor, 55)
 
+    def test_realiza_calculo_IKCV_com_ICMS(self):
+        valor = self.calculador_de_impostos.realiza_calculo(self.orcamento, IKCV(ICMS()))
+        self.assertEqual(valor, 88)
+
 
 if __name__ == '__main__':
     unittest.main()

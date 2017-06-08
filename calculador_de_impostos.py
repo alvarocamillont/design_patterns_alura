@@ -23,4 +23,4 @@ if __name__ == '__main__':
 
     print('ICPP, IKCV')
     print(calculador_de_impostos.realiza_calculo(orcamento, ICPP()))
-    print(calculador_de_impostos.realiza_calculo(orcamento, IKCV()))
+    print(calculador_de_impostos.realiza_calculo(orcamento, IKCV(ICMS())))
